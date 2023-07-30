@@ -34,15 +34,17 @@ window.addEventListener("load", () => {
         painting = true;
     }
 
-    function endPosition() {
+    function endPosition(event) {
+        c.beginPath();
         painting = false;
-        
     }
 
     function draw(e) {
         if (!painting) return;
         c.lineWidth = 10;
+        c.strokeStyle = "cyan";
         c.lineCap = "round";
+        // c.lineTo(e.offsetX, e.offsetY);
         c.lineTo(e.clientX, e.clientY);
         c.stroke();
     }
