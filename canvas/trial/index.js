@@ -39,10 +39,17 @@ window.addEventListener("load", () => {
         painting = false;
     }
 
+    function lineColor() {
+        let a = Math.floor(Math.random() * 255);
+        let b = Math.floor(Math.random() * 255);
+        let c = Math.floor(Math.random() * 255);
+        return `rgba(${a}, ${b}, ${c}, 1)`
+    }
+
     function draw(e) {
         if (!painting) return;
         c.lineWidth = 10;
-        c.strokeStyle = "cyan";
+        c.strokeStyle = lineColor();
         c.lineCap = "round";
         // c.lineTo(e.offsetX, e.offsetY);
         c.lineTo(e.clientX, e.clientY);
