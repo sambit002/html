@@ -62,7 +62,7 @@ function Ball(x, y, radius, dx, dy) {
                 if (this.radius < 40)
                 this.radius += 5;
         } 
-        else if (this.radius > 3) {
+        else if (this.radius > 0) {
             this.radius -= 1;
         }
     }
@@ -70,7 +70,7 @@ function Ball(x, y, radius, dx, dy) {
 
 let ballArr = [];
 
-for (let i = 0; i < 250; i++) {
+for (let i = 0; i < 500; i++) {
     let x = Math.random() * innerWidth + 10;
     let y = Math.random() * innerHeight + 10;
     let dx = (Math.random() - 0.5);//x velocity
